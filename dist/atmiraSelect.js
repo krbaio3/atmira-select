@@ -1,55 +1,75 @@
-(function () {
-	'use strict';
-	angular
-	.module("atmira.ui.select", [])
-	.component('atSelect', {
-		bindings: {
+
+angular
+
+.module("atmira.ui.select", [])
+
+.directive("atSelect", function($rootScope) {
+	return {
+		restrict: "E",
+		templateUrl: "bower_components/atmira-ui-select/dist/atmiraSelect.min.html",
+		scope: {
 			placeholder: "@",
 			list: "=",
 			selected: "=ngModel",
-			atWidth: "@",
-			property: "@",
-			atRequired: "@"
+			atWidth: "@"
 		},
-		controller: controllerSelect,
-		templateUrl: 'bower_components/atmira-ui-select/dist/atmiraSelect.html'
-	});
+		link: function (scope, element, attrs) {
+			scope.listVisible = false;
+			scope.isPlaceholder = true;
+			scope.close = false;
 
-	function controllerSelect($element) {
-		var vm = this;
-		vm.atRequired !== undefined ? vm.required = true : vm.required = false;
-		vm.listVisible = false;
-		if(vm.selected !== undefined){
-			vm.isPlaceholder = false;
-			vm.display = vm.selected;
-		}else{
-			vm.isPlaceholder = true;
-		}
-		vm.select = function (item) {
-			vm.required = false;
-			vm.isPlaceholder = false;
-			vm.selected = item;
-			vm.listVisible = false;
-			vm.display = vm.selected;
-		};
-		if (vm.atRequired !== undefined) {
-			vm.required = true;
-		}
-		vm.isSelected = function (item) {
-			return item === vm.selected;
-		};
-		vm.closeSelect = function () {
-			vm.listVisible = false;
-		}
-		vm.openSelect = function () {
-			vm.listVisible = !vm.listVisible;
-		};
 
-		if (vm.atWidth != null || vm.atWidth != undefined) {
-			angular.element($element[0].children[0]).css("width", vm.atWidth);
-		} else {
-			angular.element($element[0].children[0]).css("width", "auto");
-		}
+			scope.select = function (item) {
+				scope.isPlaceholder = false;
+				scope.selected = item;
+				scope.listVisible = false;
+			};
 
+			scope.isSelected = function (item) {
+				return item === scope.selected;
+			};
+
+			scope.show = function () {
+				scope.listVisible = !scope.listVisible;
+				scope.close = false;
+			};
+
+			if(scope.atWidth != null || scope.atWidth != undefined) {
+				angular.element(element[0].children[0]).css("width", scope.atWidth);
+			}else {
+				angular.element(element[0].children[0]).css("width", "auto");
+			}
+
+
+			$rootScope.$on("clicked", function (target) {
+				if (scope.close) {
+					if (scope.listVisible) {
+						scope.$apply(function () {
+							scope.listVisible = false;
+							scope.close = false;
+						})
+					}
+				}
+				if (scope.listVisible) {
+					scope.$apply(function () {
+						scope.close = true;
+					})
+				}
+			});
+
+			scope.$watch("selected", function (value) {
+				scope.isPlaceholder = scope.selected === undefined;
+				scope.display = scope.selected;
+			});
+		}
 	}
-})()
+})
+
+.run(function($rootScope){
+	angular.element(document).on("click", function(){
+		$rootScope.$broadcast("clicked");
+	});
+})
+
+$('li#disabled').unbind('click');
+
