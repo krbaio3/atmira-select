@@ -1,0 +1,16 @@
+<button type="button" name="at-select" ng-class="{'required': $ctrl.required}" class="select-container" ng-blur="$ctrl.closeSelect()">
+  <div class="dropdown-container" ng-class="{ show: $ctrl.listVisible }" class="clearfix">
+    <div class="dropdown-display" ng-click="$ctrl.openSelect()" ng-class="{ clicked: $ctrl.listVisible }">
+      <span ng-if="!$ctrl.isPlaceholder">{{$ctrl.property !== undefined ? $ctrl.display[$ctrl.property] : $ctrl.display}}</span>
+      <span class="placeholder" ng-if="$ctrl.isPlaceholder">{{$ctrl.placeholder}}</span>
+      <div class="inner-button"><span class="bki-unfold-down"></span>
+        <!--<span class="sr-only">Botón que despliega la lista de opciones disponibles.</span>-->
+      </div>
+    </div>
+    <div class="dropdown-list" ng-if="$ctrl.listVisible">
+      <ul>
+        <li ng-repeat="item in $ctrl.list track by $index" ng-click="$ctrl.select(item)" ng-class="{ selected: $ctrl.isSelected(item) }">{{$ctrl.property !== undefined ? item[$ctrl.property] : item}}</li>
+      </ul>
+    </div>
+  </div>
+</button>

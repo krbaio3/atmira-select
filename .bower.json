@@ -1,0 +1,17 @@
+{
+  "name": "atmira-ui-select",
+  "_release": "18e3b7079c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "18e3b7079cc89ec24487e6a2c9b180d291c572c7"
+  },
+  "main": [
+    "./dist/atmiraSelect.js",
+    "./dist/atmiraSelect.html",
+    "./dist/atmiraSelect.css"
+  ],
+  "_source": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-select.git",
+  "_target": "*",
+  "_originalSource": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-select.git"
+}
