@@ -1,15 +1,39 @@
 {
+  "author": {
+      "name": "Atmira"
+  },
   "name": "atmira-ui-select",
-  "_release": "18e3b7079c",
+  "_release": "0a55c6d873",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "18e3b7079cc89ec24487e6a2c9b180d291c572c7"
+    "commit": "0a55c6d8730a084d4dda7759be3fee0f2fc99e57"
   },
-  "main": [
-      "./dist/atmiraSelect-tpls.min.js"
+  "version": "1.0.1",
+  "repository": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-select.git",
+  "keywords": [
+      "Atmira",
+      "select",
+      "combo"
   ],
-  "_source": "https://github.com/krbaio3/atmira-select.git",
+  "main": [
+    "./dist/atmiraSelect.js",
+    "./dist/atmiraSelect.min.html",
+    "./dist/atmiraSelect.min.css"
+  ],
+  "dependencies": {
+      "angular": "~1.4.12"
+  },
+  "devDependencies": {
+      "angular-mocks": "~1.4.12",
+      "angular-cookies": "~1.4.12",
+      "bootstrap-sass-official": "v3.0.0.0"
+  },
+  "private": true,
+  "resolutions": {
+      "angular": "~1.4.12"
+  },
+  "_source": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-select.git",
   "_target": "*",
-  "_originalSource": "https://github.com/krbaio3/atmira-select.git"
+  "_originalSource": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-select.git"
 }

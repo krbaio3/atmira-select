@@ -1,12 +1,14 @@
 {
   "name": "atmira-ui-select",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "authors": [
     "Atmira"
   ],
   "description": "select con estilos bankia de Atmira",
   "main": [
-      "./dist/atmiraSelect-tpls.min.js"
+      "./dist/atmiraSelect.js",
+      "./dist/atmiraSelect.min.html",
+      "./dist/atmiraSelect.min.css"
   ],
   "keywords": [
     "Atmira",
@@ -14,7 +16,7 @@
     "combo"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/krbaio3/atmira-select.git",
+  "homepage": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-select.git",
   "private": true,
   "ignore": [
     "**/.*",
