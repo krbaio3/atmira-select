@@ -6,9 +6,7 @@
   ],
   "description": "select con estilos bankia de Atmira",
   "main": [
-      "./dist/atmiraSelect.js",
-      "./dist/atmiraSelect.min.html",
-      "./dist/atmiraSelect.min.css"
+      "./dist/atmiraSelect-tpls.min.js"
   ],
   "keywords": [
     "Atmira",
@@ -16,7 +14,7 @@
     "combo"
   ],
   "license": "MIT",
-  "homepage": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-select.git",
+  "homepage": "https://github.com/krbaio3/atmira-select.git",
   "private": true,
   "ignore": [
     "**/.*",
