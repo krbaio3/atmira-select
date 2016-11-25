@@ -9,7 +9,7 @@
     "branch": "master",
     "commit": "18e3b7079cc89ec24487e6a2c9b180d291c572c7"
   },
-  "version": "2.0.1",
+  "version": "2.0.2",
   "repository": "https://github.com/krbaio3/atmira-select.git",
   "keywords": [
     "Atmira",
@@ -17,7 +17,7 @@
     "combo"
   ],
   "main": [
-    "./dist/atmiraSelect-tpls.min.js",
+    "./dist/atmiraSelect-tpls.js",
     "./dist/atmiraSelect.min.css"
   ],
   "dependencies": {
