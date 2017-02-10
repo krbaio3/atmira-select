@@ -11,7 +11,8 @@
 			atWidth: "@",
 			property: "@",
 			atRequired: "@",
-			atDisabled: '<'
+			atDisabled: '<',
+			onChange: '&?'
 		},
 		require: {
 			ngModel: 'ngModel',
@@ -40,6 +41,10 @@
 			vm.isPlaceholder = false;
 			vm.selected = item;
 			vm.listVisible = false;
+			if(vm.onChange){
+
+				vm.onChange();
+			}
 		};
 		vm.isSelected = function (item) {
 			return item === vm.selected;
