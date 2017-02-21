@@ -51,7 +51,7 @@
 		};
 		vm.closeSelect = function () {
 			vm.listVisible = false;
-		}
+		};
 		vm.openSelect = function () {
 			if(vm.atDisabled) {
 				vm.listVisible = undefined;
@@ -65,4 +65,4 @@
 			angular.element($element[0].children[0]).css("width", "auto");
 		}
 	}
-})()
+})();
