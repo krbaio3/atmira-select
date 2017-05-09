@@ -10,8 +10,8 @@
 			selectedValue: '<',
 			atWidth: "@",
 			property: "@",
-			atRequired: "@",
-			atDisabled: '<',
+			atatRequired: "<?",
+			atDisabled: '<?',
 			onChange: '&?'
 		},
 		require: {
@@ -27,9 +27,8 @@
 			var ngModel = vm.ngModel;
 		};
 		vm.listVisible = false;
-		vm.required = vm.atRequired === undefined ? false :true;
 		if(vm.selected !== undefined){
-			vm.required = false;
+			vm.atRequired = false;
 			vm.isPlaceholder = false;
 		}else{
 			vm.isPlaceholder = true;
@@ -37,7 +36,7 @@
 		vm.select = function (item) {
 			vm.ngModel.$setTouched();
 			vm.ngModel.$validate();
-			vm.required = false;
+			vm.atRequired = false;
 			vm.isPlaceholder = false;
 			vm.selected = item;
 			vm.listVisible = false;
