@@ -11,15 +11,14 @@
     "clean": "rimraf dist",
     "start": "webpack-dev-server --config webpack.develop.config.js --debug --progress --colors --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    
     "commit": "git pull && git commit -a -m",
     "tag": "npm run clean && webpack --config webpack.config.js -p --display-error-details && git add -A dist && git commit -m \"Generar Distribuido\" ",
     "version:path": "npm version patch -m ",
     "version:minor": "npm version minor -m ",
     "version:mayor": "npm version major -m ",
     "postversion": "echo \"Esto es una prueba\" ",
-    
-    "prueba": "git push origin "
+    "prueba": "git push origin ",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
@@ -45,6 +44,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "changelog": "^1.4.0",
+    "conventional-changelog-cli": "^1.3.2",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
