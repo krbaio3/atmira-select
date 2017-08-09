@@ -11,8 +11,8 @@ const context = {
 };
 
 const exclude = {
-    excludeHtml: /(node_modules|bower_components|impediments.html|index.html|impediments-table.html)/,
-    excludeJs: /(node_modules|bower_components|index.js)/,
+    excludeHtml: /(node_modules|impediments.html|index.html|impediments-table.html)/,
+    excludeJs: /(node_modules|index.js)/,
 };
 
 const entry = {
@@ -21,14 +21,7 @@ const entry = {
     vendor: [
         'jquery',
         'angular',
-        'angular-sanitize',
-        'angular-ui-bootstrap',
-        'bankia-cl-ui-ccc',
-        'bankia-cl-ui-document',
-        'bankia-core-subprocesses',
-        'bankia-core-swl',
-        'bankia-neo-cl-ui-flows',
-        'bankia-neo-ui-dialog',
+        'bootstrap',
     ],
 };
 const output = {
@@ -47,24 +40,24 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     module: {
-        rules: [
+        rules: [{
+                test: /\.js$/,
+                exclude: exclude.excludeJs,
+                use: [{
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['env'],
+                        },
+                    },
+                    {
+                        loader: 'required-loader?import-loader[]=angular',
+                    }
+                ],
+            },
             {
                 test: /\.html$/,
                 exclude: exclude.excludeHtml,
                 loader: ['ngtemplate-loader', 'html-loader'],
-            },
-            {
-                test: /\.js$/,
-                exclude: exclude.excludeJs,
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env'],
-                    },
-                },
-                {
-                    loader: 'required-loader?import-loader[]=angular',
-                }],
             },
             {
                 test: require.resolve('./bower_components/bankia-ui-checkbox/dist/checkbox-tpls.js'),
@@ -89,11 +82,11 @@ module.exports = {
                     fallback: 'style-loader',
 
                     use: [{
-                        loader: 'css-loader',
-                    },
-                    {
-                        loader: 'sass-loader',
-                    },
+                            loader: 'css-loader',
+                        },
+                        {
+                            loader: 'sass-loader',
+                        },
                     ],
                 }),
             },

@@ -1,6 +1,6 @@
 {
   "name": "at-select",
-  "version": "1.0.1",
+  "version": "0.0.0",
   "description": "select Atmira personalizado",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git pull && git commit -a -m",
     "tag": "npm run clean && webpack --config webpack.config.js -p --display-error-details && git add -A dist && git commit -m \"Generar Distribuido\" ",
+    "version:path": "npm version patch -m ",
+    "version:minor": "npm version minor -m ",
+    "version:mayor": "npm version major -m ",
     "postversion": "echo \"Esto es una prueba\" ",
     "prueba": "git push origin "
   },
@@ -39,10 +42,13 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
+    "changelog": "^1.4.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "ngtemplate-loader": "^2.0.1",
     "node-sass": "^4.5.3",
     "rimraf": "^2.6.1",
     "sass-lint": "^1.10.2",

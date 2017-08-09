@@ -1,7 +1,8 @@
-import * as angular from 'angular';
+import angular from 'angular';
 import controller from './atmiraSelect.controller';
 
 const templateUrl = require('../views/atmiraSelect.html');
+
 const transclude = true;
 const bindings = {
     placeholder: "@",
@@ -14,16 +15,15 @@ const bindings = {
     atDisabled: '<?',
     onChange: '&?'
 };
-const require = {
-    ngModel: 'ngModel',
-};
+
 
 const atSelect = {
     controller,
     templateUrl,
     transclude,
     bindings,
-    require
+    require : { ngModel: '^ngModel',
+    }
 }
 
 export default atSelect;

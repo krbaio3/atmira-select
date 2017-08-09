@@ -11,8 +11,8 @@ const context = {
 };
 
 const exclude = {
-    excludeHtml: /(node_modules|bower_components|impediments.html|index.html|impediments-table.html)/,
-    excludeJs: /(node_modules|bower_components|index.js)/,
+    excludeHtml: /(node_modules|demo.html|index.html)/,
+    excludeJs: /(node_modules|index.js)/,
 };
 
 const entry = {
@@ -46,7 +46,7 @@ module.exports = {
                 test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: 'awesome-typescript-loader',
-                
+
             },
             {
                 test: /\.js$/,
@@ -59,17 +59,22 @@ module.exports = {
                 }],
             },
             {
+                test: /\.html$/,
+                exclude: exclude.excludeHtml,
+                loader: ['ngtemplate-loader', 'html-loader'],
+            },
+            {
                 test: /\.scss$/,
                 exclude: /(node_modules)/,
                 loader: ExtractTestPlugin.extract({
                     fallback: 'style-loader',
 
                     use: [{
-                        loader: 'css-loader',
-                    },
-                    {
-                        loader: 'sass-loader',
-                    },
+                            loader: 'css-loader',
+                        },
+                        {
+                            loader: 'sass-loader',
+                        },
                     ],
                 }),
             },
