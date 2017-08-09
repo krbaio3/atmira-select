@@ -12,9 +12,9 @@
     "start": "webpack-dev-server --config webpack.develop.config.js --debug --progress --colors --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git pull && git commit -a -m",
-    "tag": "npm run clean && webpack --config webpack.config.js -p --display-error-details && git add -A dist",
+    "tag": "npm run clean && webpack --config webpack.config.js -p --display-error-details && git add -A dist && git commit -m \"Generar Distribuido\" ",
     "postversion": "echo \"Esto es una prueba\" ",
-    "prueba":"git pull && git commit -a -m"
+    "prueba":"git push origin "
   },
   "repository": {
     "type": "git",
