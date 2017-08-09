@@ -1,6 +1,6 @@
 {
   "name": "at-select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "select Atmira personalizado",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "commit": "git pull && git commit -a -m",
     "tag": "npm run clean && webpack --config webpack.config.js -p --display-error-details && git add -A dist && git commit -m \"Generar Distribuido\" ",
     "postversion": "echo \"Esto es una prueba\" ",
-    "prueba":"git push origin "
+    "prueba": "git push origin "
   },
   "repository": {
     "type": "git",
