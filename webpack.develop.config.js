@@ -17,8 +17,12 @@ const exclude = {
 
 const entry = {
     main: router.entryDevelop,
-    appStyles: router.appStyles,
-    //vendor: ['../node_modules/bootstrap/dist/css/bootstrap.css'],
+    // appStyles: router.appStyles,
+    vendor: [
+        'jquery',
+        'angular',
+        'bootstrap',
+    ],
 };
 const resolve = {
     extensions: ['.ts', '.js'],
@@ -56,7 +60,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules)/,
                 loader: ExtractTestPlugin.extract({
                     fallback: 'style-loader',
 
